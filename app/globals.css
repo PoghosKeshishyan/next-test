@@ -1,0 +1,30 @@
+* {
+    /*font-family: Helvetica, sans-serif;*/
+    font-family: "Helv", serif;
+    /*margin: 0;*/
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .4s linear;
+    text-decoration: none;
+}
+
+body {
+    padding-top: 4rem;
+}
+
+@font-face {
+    font-family: "Helv";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/Helvetica.ttf") format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Helv";
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/Helvetica-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
