@@ -6,7 +6,11 @@ const Electronics = async () => {
     const category = "electronics";
 
     const data = await FetchData();
-    const products = data.filter(product => product.category === category);
+    // const products = data.filter(product => product.category === category);
+
+    const products = Array.isArray(data)
+        ? data.filter(product => product.category === category)
+        : [];
 
     return (
         <>
