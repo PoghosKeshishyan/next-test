@@ -12,18 +12,18 @@ const CartProvider = memo(({ children }) => {
 
     useEffect(() => {
         // eslint-disable-next-line react-hooks/set-state-in-effect
-        setOrders(JSON.parse(localStorage.getItem("orders")));
+        setOrders( JSON.parse(localStorage.getItem("orders")) || [] );
     }, []);
 
     useEffect(() => {
-        const amount = orders.reduce((acc, curr) => {
+        const amount = (orders || []).reduce((acc, curr) => {
             const {price} = curr;
             return acc + curr.quantity * price;
         }, 0);
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setTotalPrice(amount.toFixed(2));
 
-        localStorage.setItem("orders", JSON.stringify(orders));
+        localStorage.setItem("orders", JSON.stringify(orders || []));
 
     }, [orders]);
 
